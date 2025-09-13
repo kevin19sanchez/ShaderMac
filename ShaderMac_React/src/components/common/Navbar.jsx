@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ setPage }) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const navigate = useNavigate();
+
     const handleLogout = () => {
-        setPage("login");
-        alert("✔ Sesión cerrada");
+        localStorage.removeItem("token");       // invalida la sesión
+        navigate("/login", { replace: true });  // redirige al login
     };
 
     return (
@@ -38,11 +42,12 @@ const Navbar = ({ setPage }) => {
                     </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                    <button className="bg-[#ad2e36] text-white px-4 py-2 rounded-md font-medium flex items-center hover:bg-[#9c0720] transition duration-200">
+                    <NavLink to="/movies" className="bg-[#ad2e36] text-white no-underline px-4 py-2 rounded-md font-medium flex items-center hover:bg-[#9c0720] transition duration-200">
                         <i className="fas fa-cog mr-2"></i>
-                        Admin
-                    </button>
-                    <button onClick={handleLogout} className="border border-[#d6a709] text-[#000000] px-4 py-2 rounded-md font-medium hover:bg-[#fed900] transition duration-200">
+                            Admin
+                    </NavLink>
+
+                    <button onClick={handleLogout} className="border border-[#d6a709] text-[#000000] px-4 py-2 rounded-md font-medium hover:bg-[#fed900] transition duration-200" type="button">
                         Cerrar Sesión
                     </button>
                 </div>
@@ -65,10 +70,12 @@ const Navbar = ({ setPage }) => {
                     <a href="#" className="block px-3 py-2 text-gray-700 hover:text-red-600 font-medium">
                         Ubicaciones
                     </a>
-                    <button className="w-full text-left px-3 py-2 text-red-600 font-medium">
-                        Admin
-                    </button>
-                    <button onClick={handleLogout} className="w-full text-left px-3 py-2 text-red-600 font-medium">
+                    <NavLink to="/movies" className="bg-[#ad2e36] text-white px-4 py-2 rounded-md font-medium flex items-center hover:bg-[#9c0720] transition duration-200">
+                        <i className="fas fa-cog mr-2"></i>
+                            Admin
+                    </NavLink>
+
+                    <button onClick={handleLogout} className="border border-[#d6a709] text-[#000000] px-4 py-2 rounded-md font-medium hover:bg-[#fed900] transition duration-200" type="button">
                         Cerrar Sesión
                     </button>
                 </div>
