@@ -100,20 +100,20 @@ const Login = ({setPage}) => {
                                                 Contraseña
                                             </label>
                                             <div className="position-relative">
-                                                <input type={showPassword ? 'text' : 'password'} 
-                                                className="form-control" id="password" name="password" 
+                                                <input type={showPassword ? 'text' : 'password'}
+                                                className="form-control" id="password" name="password"
                                                 placeholder='********' value={formData.password}
-                                                onChange={handleChange} required 
+                                                onChange={handleChange} required
                                                 style={{borderRadius: '8px', border: '1px solid #ddd', padding: '0.75rem', paddingRight: '2.5rem'}}/>
 
                                                 <button type='button' className="btn position-absolute end-0 top-50 translate-middle-y me-2"
-                                                style={{border: 'none', background: 'none', color: '#6c757d', zIndex: 10}} 
+                                                style={{border: 'none', background: 'none', color: '#6c757d', zIndex: 10}}
                                                 onClick={togglePassword}>
                                                     <i className={showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
                                                 </button>
                                             </div>
                                         </div>
-                                        
+
                                         <button type="submit" className="btn btn-danger w-100 fw-medium"
                                         style={{ borderRadius: '8px', padding: '0.75rem'}}>
                                             Ingresar
@@ -124,11 +124,6 @@ const Login = ({setPage}) => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Footer */}
-            <div className="text-center py-3" style={{ color: '#6c757d', fontSize: '0.875rem' }}>
-                © 2024 ShaderMac Cinema. Todos los derechos reservados.
             </div>
         </div>
     )
