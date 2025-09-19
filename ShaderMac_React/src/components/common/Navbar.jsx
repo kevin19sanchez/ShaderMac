@@ -22,24 +22,23 @@ const Navbar = ({ setPage }) => {
                     <span className="font-bold text-[#ad2e36] fw-bold text-xl">ShaderMac</span>
                 </div>
 
-                {/* Enlaces desktop */}
                 <div className="flex items-center space-x-8">
-                    <a href="#" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
-                        Inicio
-                    </a>
-                    <a href="#" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
-                        En Estreno
-                    </a>
-                    <a href="#" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
-                        Preventa
-                    </a>
-                    <a href="#" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
-                        Próximamente
-                    </a>
-                    <a href="#" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium flex items-center">
-                    <i className="fas fa-map-marker-alt mr-1"></i>
-                        Ubicaciones
-                    </a>
+                    <NavLink to="/" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                            Inicio
+                    </NavLink>
+                    <NavLink to="/moviesCard" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                            En Estreno
+                    </NavLink>
+                    <NavLink to="/moviesCard" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                            Preventa
+                    </NavLink>
+                    <NavLink to="/moviesCard" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                            Próximamente
+                    </NavLink>
+                    <NavLink to="/locations" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                        <i className="fas fa-map-marker-alt mr-1"></i>
+                            Ubicaciones
+                    </NavLink>
                 </div>
                 <div className="flex items-center space-x-3">
                     <NavLink to="/movies" className="bg-[#ad2e36] text-white no-underline px-4 py-2 rounded-md font-medium flex items-center hover:bg-[#9c0720] transition duration-200">

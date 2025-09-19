@@ -1,19 +1,13 @@
-// src/router.jsx
-import {
-    createBrowserRouter,
-    Navigate,
-    Outlet,
-    NavLink,
-} from "react-router-dom";
-
+import { createBrowserRouter, Navigate, Outlet, NavLink } from "react-router-dom";
 import Login from "../components/auth/Login";
 import Home from "../pages/Home";
 import MoviesAdmin from "../pages/MoviesAdmin";
 import UsersAdmin from "../pages/UsersAdmin";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
+import MovieCard from "../components/movies/MovieCard";
+import Location from "../pages/Location";
 
-// auth mínima basada en localStorage
 const isLoggedIn = () => Boolean(localStorage.getItem("token"));
 
 function AppLayout() {
@@ -25,7 +19,6 @@ function AppLayout() {
         <div className="text-center d-flex flex-col min-vh-100">
         <Navbar />
 
-        {/* Accesos rápidos dentro del layout protegido */}
         <div className="d-flex gap-2 justify-content-center my-3">
             <NavLink to="/" end className={({ isActive }) => cls(isActive)}>
                 Home
@@ -57,6 +50,8 @@ const router = createBrowserRouter([
             { index: true, element: <Home /> }, // "/" como índice del layout
             { path: "movies", element: <MoviesAdmin /> },
             { path: "users", element: <UsersAdmin /> },
+            { path: "moviesCard", element: <MovieCard /> },
+            { path: "locations", element: <Location /> }
         ],
     },
 
