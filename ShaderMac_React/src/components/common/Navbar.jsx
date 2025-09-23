@@ -26,13 +26,13 @@ const Navbar = ({ setPage }) => {
                     <NavLink to="/" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
                             Inicio
                     </NavLink>
-                    <NavLink to="/moviesCard" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                    <NavLink to="/movieList" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
                             En Estreno
                     </NavLink>
-                    <NavLink to="/moviesCard" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                    <NavLink to="/movieList" id="'preventa" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
                             Preventa
                     </NavLink>
-                    <NavLink to="/moviesCard" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
+                    <NavLink to="/movieList" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">
                             Próximamente
                     </NavLink>
                     <NavLink to="/locations" className="text-[#000000] hover:text-[#ad2e36] no-underline hover:underline p-3 font-medium">

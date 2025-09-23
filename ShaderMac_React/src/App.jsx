@@ -21,8 +21,7 @@ function AppLayout() {
     <div className="text-center d-flex flex-column min-vh-100">
       <Navbar />
 
-      {/* Barra de accesos rápidos dentro del layout */}
-      <div className="d-flex gap-2 justify-content-center my-3">
+      {/* <div className="d-flex gap-2 justify-content-center my-3">
         <NavLink to="/" end className={({ isActive }) => linkClass(isActive)}>
           Home
         </NavLink>
@@ -32,7 +31,7 @@ function AppLayout() {
         <NavLink to="/users" className={({ isActive }) => linkClass(isActive)}>
           Users
         </NavLink>
-      </div>
+      </div> */}
 
       <div className="flex-1">
         <Outlet />

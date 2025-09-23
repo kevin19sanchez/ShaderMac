@@ -22,7 +22,7 @@ export default function Locations() {
       screens: 12,
       mapUrl: "https://maps.google.com/?q=19.4326,-99.1332",
       image:
-        "https://images.unsplash.com/photo-1588776814546-885af6bfb0d5?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop&q=80",
     },
     {
       id: "mx_mty_valle",
@@ -39,80 +39,75 @@ export default function Locations() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold text-red-700 mb-2">
-          Nuestras Ubicaciones
-        </h1>
-        <p className="text-neutral-600 text-lg">
-          Encuentra el cine ShaderMac más cercano y consulta horarios,
-          dirección y contacto.
+    <div className="container py-5">
+      {/* Encabezado */}
+      <header className="text-center mb-5">
+        <h1 className="display-4 text-danger mb-3">Nuestras Ubicaciones</h1>
+        <p className="text-secondary">
+          Encuentra el cine ShaderMac más cercano y consulta horarios, dirección y contacto.
         </p>
       </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Grid de tarjetas */}
+      <div className="row g-4">
         {locations.map((loc) => (
-          <article
-            key={loc.id}
-            className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300"
-          >
-            {/* Imagen */}
-            <div className="h-56 w-full overflow-hidden">
-              <img
-                src={loc.image}
-                alt={loc.name}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+          <div key={loc.id} className="col-12 col-sm-6 col-lg-4">
+            <div className="card h-100 shadow-sm">
+              {/* Imagen con overlay */}
+              <div className="position-relative">
+                <img
+                  src={loc.image}
+                  alt={loc.name}
+                  className="card-img-top"
+                  style={{ objectFit: "cover", height: "250px" }}
+                />
+                <div
+                  className="position-absolute bottom-0 start-0 w-100 p-3"
+                  style={{
+                    background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
+                    color: "white",
+                  }}
+                >
+                  <h5 className="card-title mb-0">{loc.name}</h5>
+                  <small>{loc.city}</small>
+                </div>
+              </div>
 
-            {/* Info */}
-            <div className="p-6 flex flex-col justify-between flex-grow">
-              <div>
-                <h3 className="text-2xl font-bold text-red-700 mb-1">
-                  {loc.name}
-                </h3>
-                <p className="text-sm text-neutral-500 mb-3">{loc.city}</p>
-
-                <ul className="text-sm text-neutral-700 space-y-2">
+              {/* Info */}
+              <div className="card-body d-flex flex-column justify-content-between">
+                <ul className="list-unstyled mb-3 text-secondary">
                   <li>
-                    <span className="font-medium">📍 Dirección:</span>{" "}
-                    {loc.address}
+                    <strong>📍 Dirección:</strong> {loc.address}
                   </li>
                   <li>
-                    <span className="font-medium">📞 Teléfono:</span>{" "}
-                    {loc.phone}
+                    <strong>📞 Teléfono:</strong> {loc.phone}
                   </li>
                   <li>
-                    <span className="font-medium">🕒 Horario:</span> {loc.hours}
+                    <strong>🕒 Horario:</strong> {loc.hours}
                   </li>
                   <li>
-                    <span className="font-medium">🎬 Salas:</span>{" "}
-                    <span className="inline-block bg-gradient-to-r from-yellow-300 to-yellow-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                      {loc.screens} salas
-                    </span>
+                    <strong>🎬 Salas:</strong>{" "}
+                    <span className="badge bg-danger">{loc.screens} salas</span>
                   </li>
                 </ul>
-              </div>
 
-              {/* Botones */}
-              <div className="mt-5 flex gap-3">
-                <a
-                  href={loc.mapUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 bg-red-600 text-white rounded-lg py-2 text-sm font-semibold text-center hover:bg-red-700 transition"
-                >
-                  Cómo llegar
-                </a>
-                <button
-                  type="button"
-                  className="flex-1 border border-red-600 text-red-600 rounded-lg py-2 text-sm font-semibold hover:bg-red-50 transition"
-                >
-                  Ver cartelera
-                </button>
+                {/* Botones */}
+                <div className="d-flex gap-2">
+                  <a
+                    href={loc.mapUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-danger flex-fill"
+                  >
+                    Cómo llegar
+                  </a>
+                  <button type="button" className="btn btn-outline-danger flex-fill">
+                    Ver cartelera
+                  </button>
+                </div>
               </div>
             </div>
-          </article>
+          </div>
         ))}
       </div>
     </div>

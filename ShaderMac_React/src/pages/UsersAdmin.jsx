@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ref, push, onValue, remove, update } from 'firebase/database';
 import {database} from '../services/firebase'
-import Navbar from '../components/common/Navbar';
 
 const UsersAdmin = () => {
     const [users, setUsers] = useState([])

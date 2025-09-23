@@ -7,6 +7,7 @@ import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import MovieCard from "../components/movies/MovieCard";
 import Location from "../pages/Location";
+import MovieList from "../components/movies/MovieList";
 
 const isLoggedIn = () => Boolean(localStorage.getItem("token"));
 
@@ -47,11 +48,12 @@ const router = createBrowserRouter([
     {
         element: <Protected />,
         children: [
-            { index: true, element: <Home /> }, // "/" como índice del layout
+            { index: true, element: <Home /> },
             { path: "movies", element: <MoviesAdmin /> },
             { path: "users", element: <UsersAdmin /> },
             { path: "moviesCard", element: <MovieCard /> },
-            { path: "locations", element: <Location /> }
+            { path: "locations", element: <Location /> },
+            { path: "movieList", element: <MovieList /> }
         ],
     },
 
